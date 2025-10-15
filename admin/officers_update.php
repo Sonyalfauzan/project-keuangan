@@ -1,0 +1,4 @@
+<?php include '../koneksi.php'; session_start(); $t=intval($_SESSION['tenant_id']);
+$id=intval($_POST['id']); $name=mysqli_real_escape_string($koneksi,$_POST['name']); $pos=mysqli_real_escape_string($koneksi,$_POST['position']); $sd=$_POST['start_date']; $ed=$_POST['end_date']; $phone=mysqli_real_escape_string($koneksi,$_POST['phone']); $email=mysqli_real_escape_string($koneksi,$_POST['email']);
+mysqli_query($koneksi,"UPDATE officers SET name='$name', position='$pos', start_date='$sd', end_date='$ed', phone='$phone', email='$email' WHERE id=$id AND tenant_id=$t");
+header("location:officers.php"); ?>

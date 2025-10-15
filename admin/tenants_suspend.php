@@ -1,0 +1,1 @@
+<?php include '../koneksi.php'; $id=intval($_GET['id']); mysqli_query($koneksi,"UPDATE tenants SET tenant_status='suspended' WHERE tenant_id=$id"); header("location:tenants.php");?>
